@@ -15,18 +15,8 @@ ARCHITECTURE struct OF Top IS
 	SIGNAL int_Instruct : STD_LOGIC_VECTOR (31 DOWNTO 0);
 	SIGNAL int_PC, int_aluResult, int_Data1, int_Data2, int_WriteData, int_Other : STD_LOGIC_VECTOR (7 DOWNTO 0);
 	SIGNAL int_ALUOp : STD_LOGIC_VECTOR (1 DOWNTO 0);
-	SIGNAL int_Branch, int_Zero, int_MemWrite, int_RegWrite, int_Jump, int_RegDst, int_MemtoReg, int_ALUSrc : STD_LOGIC;
-	SIGNAL int_nextCycle : STD_LOGIC;
+	
 
-	COMPONENT processor_8bit IS
-		PORT (
-			nextCycle, GClk, GRst : IN STD_LOGIC;
-			Instruct : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
-			PC, aluResult, readData1, readData2, writeData : OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
-			ALUOp : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
-			BranchOut, ZeroOut, MemWrite, RegWrite, Jump, RegDst, MemtoReg, ALUSrc : OUT STD_LOGIC
-		);
-	END COMPONENT;
 
 	COMPONENT MUX8x1_8bit IS
 		PORT (
