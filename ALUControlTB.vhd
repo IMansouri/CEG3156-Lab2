@@ -44,5 +44,6 @@ error;
 
 		  wait for period 
                   	Op(2) <='0'
-			  Op(1)<=
+			  Op(1)<=''
+			  Op(0)<=''
 
