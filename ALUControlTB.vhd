@@ -1,6 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.all; use IEEE.STD_LOGIC_UNSIGNED.all;
-entity testbench isn --nothing
+entity testbench is --nothing
 end;
 rchitecture test of testbench is
 component ALUControl
