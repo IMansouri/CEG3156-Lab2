@@ -34,7 +34,7 @@ end process;
 testbench_process : process
                 begin
                   RST_TB <= '0', '1' after period;
-	---Op(2)<= ALUop(0) OR (funct(1)AND ALUop(1));
+	---Op(2)<= ALUop(0) OR (funct(1)AND ALUop(1));---
 	----Op(1)<= NOT(funct(2)) OR (NOT ALUop(1));----
 	-----Op(0)<= ALUop(1) AND (funct(0)OR funct(3));---
 
