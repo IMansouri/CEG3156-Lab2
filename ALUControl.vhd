@@ -5,7 +5,7 @@ entity ALUControl is
 port (
 	funct: IN STD_LOGIC_VECTOR( 5 Downto 0);
 	ALUop: IN STD_LOGIC_VECTOR( 1 Downto 0);	
-	op: OUT STD_LOGIC_VECTOR( 2 Downto 0)
+	op: OUT STD_LOGIC_VECTOR( 2 Downto 0);
 )
 end ALUControl;
 ARCHITECTURE rtl OF ALUControl IS
