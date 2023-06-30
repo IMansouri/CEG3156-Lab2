@@ -1,16 +1,21 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.all; use IEEE.STD_LOGIC_UNSIGNED.all;
+use IEEE.STD_LOGIC_1164.all;
+
 entity testbench is --nothing
 end;
-rchitecture test of testbench is
+architecture test of testbench is
+	signal funct_TB: STD_LOGIC_VECTOR( 5 Downto 0);
+	signal ALUOp_TB : STD_LOGIC_VECTOR(1 downto 0); -- control signal for testbench
+	signal op: STD_LOGIC_VECTOR( 2 Downto 0);   ---output control signal for testbecnh
+	signal sim_end : boolean := false;
+
 component ALUControl
   port (
 	funct: IN STD_LOGIC_VECTOR( 5 Downto 0);
 	ALUop: IN STD_LOGIC_VECTOR( 1 Downto 0);	
 	op: OUT STD_LOGIC_VECTOR( 2 Downto 0)
 )
- signal funct-TB, ALUOp-TB: std_logic; -- control signal for testbench
-signal  :std_logic;   ---output control signal for testbecnh
+
 
 constant period: time := 50 ns;
 begin
@@ -38,12 +43,14 @@ testbench_process : process
 	----Op(1)<= NOT(funct(2)) OR (NOT ALUop(1));----
 	-----Op(0)<= ALUop(1) AND (funct(0)OR funct(3));---
 
-		  assert (op_TB(2) = '0')
-report "Test 1" severity
-error;
 
 		  wait for period 
-                  	Op(2) <='0'
-			Op(1)<=''
+                  	Op(2) <='100000'
+			wait for period;
+			Op(1)<='100010'
+			wait for period;
 			Op(0)<=''
+			wait;
+	end process;
+end testbench;
 
