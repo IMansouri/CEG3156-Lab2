@@ -41,15 +41,15 @@ testbench_process : process
                   RST_TB <= '0', '1' after period;
 	---Op(2)<= ALUop(0) OR (funct(1)AND ALUop(1));---
 	----Op(1)<= NOT(funct(2)) OR (NOT ALUop(1));----
-	-----Op(0)<= ALUop(1) AND (funct(0)OR funct(3));---
+	-----Op(0)<= ALUop(1) AND (funct(0) OR funct(3));---
 
 
 		  wait for period 
-                  	Op(2) <='100000'
+                  	Op(2) <='01' ----- 00 indicates add for loads and stores-----
+			wait for period; -----01 is a subtract for branches (to see if two registers are equal)---------
+			Op(1)<='10' --------10 indicates to use the funct field-----
 			wait for period;
-			Op(1)<='100010'
-			wait for period;
-			Op(0)<=''
+			Op(0)<='00'
 			wait;
 	end process;
 end testbench;
