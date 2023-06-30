@@ -45,11 +45,11 @@ testbench_process : process
 
 
 		  wait for period 
-                  	Op(2) <='01' ----- 00 indicates add for loads and stores-----
+                  	Op_TB(2) <='01' ----- 00 indicates add for loads and stores-----
 			wait for period; -----01 is a subtract for branches (to see if two registers are equal)---------
-			Op(1)<='10' --------10 indicates to use the funct field-----
+			Op_TB(1)<='10' --------10 indicates to use the funct field-----
 			wait for period;
-			Op(0)<='00'
+			Op_TB(0)<='00'
 			wait;
 	end process;
 end testbench;
