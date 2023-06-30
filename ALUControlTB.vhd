@@ -18,6 +18,7 @@ component ALUControl
 
 
 constant period: time := 50 ns;
+
 begin
 DUT : ALUControl
 port map (
@@ -34,7 +35,6 @@ CLK_TB <= '0';
 wait for period/2;
 end loop;
 wait;
-end process;
 
 testbench_process : process
                 begin
