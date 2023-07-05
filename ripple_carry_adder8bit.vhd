@@ -44,7 +44,7 @@ architecture rtl of ripple_carry_adder8bit is
 		c1 <= G0 or (p0 and c_in);			
 		
 		alu1 : entity work.ripple_carry_adder_4bits(rtl)
-					port map(c1, x_vector(7 downto 4), y_vector(7 downto 4), s_vector(7 downto 4), g1, p1, overflowFlag, c2);
+					port map(alu1_carry_in, x_vector(7 downto 4), y_vector(7 downto 4), s_vector(7 downto 4), g1, p1, overflowFlag, c2);
 		
 		c_out <= g1 or (p1 and g0) or (p1 and p0 and c_in);
 
