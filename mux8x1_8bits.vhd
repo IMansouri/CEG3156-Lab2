@@ -49,7 +49,7 @@ architecture rtl of mux8x1_8bits is
     o(2) <= (not(s(2)) and not(s(1)) and not(s(0)) and x0(2)) or  --000
             (not(s(2)) and not(s(1)) and s(0) and x1(2)) or       --001
             (not(s(2)) and s(1) and not(s(0)) and x2(2)) or       --010
-            (not(s(2)) and s(1) and s(0) and x3(0)) or            --011
+            (not(s(2)) and s(1) and s(0) and x3(2)) or            --011
             (s(2) and not(s(1)) and not(s(0)) and x4(2)) or       --100
             (s(2) and not(s(1)) and s(0) and x5(2)) or            --101
             (s(2) and s(1) and not(s(0)) and x6(2)) or            --110
