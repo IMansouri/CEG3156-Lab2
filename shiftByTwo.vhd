@@ -36,29 +36,21 @@ architecture rtl of shiftByTwo is
 	
 	begin
 	
-		d7in <= (((in_bit and shift) or (not(shift) and in_n(7))) and not(leftShift)) or
-					(((b5 and shift) or (not(shift) and in_n(7))) and leftShift);
+		d7in <= in_n(5);
 					
-		d6in <= (((in_bit and shift) or (not(shift) and in_n(6))) and not(leftShift)) or
-					(((b4 and shift) or (not(shift) and in_n(6))) and leftShift);
+		d6in <= in_n(4);
 					
-		d5in <= (((b7 and shift) or (not(shift) and in_n(5))) and not(leftShift)) or
-					(((b3 and shift) or (not(shift) and in_n(5))) and leftShift);
+		d5in <= in_n(3);
 					
-		d4in <= (((b6 and shift) or (not(shift) and in_n(4))) and not(leftShift)) or
-					(((b2 and shift) or (not(shift) and in_n(4))) and leftShift);
+		d4in <= in_n(2);
 					
-		d3in <= (((b5 and shift) or (not(shift) and in_n(3))) and not(leftShift)) or
-					(((b1 and shift) or (not(shift) and in_n(3))) and leftShift);
+		d3in <= in_n(1);
 					
-		d2in <= (((b4 and shift) or (not(shift) and in_n(2))) and not(leftShift)) or
-					(((b0 and shift) or (not(shift) and in_n(2))) and leftShift);
+		d2in <= in_n(0);
 					
-		d1in <= (((b3 and shift) or (not(shift) and in_n(1))) and not(leftShift)) or
-					(((in_bit and shift) or (not(shift) and in_n(1))) and leftShift);
+		d1in <= in_bit;
 					
-		d0in <= (((b2 and shift) or (not(shift) and in_n(0))) and not(leftShift)) or
-					(((in_bit and shift) or (not(shift) and in_n(0))) and leftShift);
+		d0in <= in_bit;
 	
 		d0 : entity work.enARdFF_2(rtl)
 				port map(reset, d0in, load, clock, b0);
