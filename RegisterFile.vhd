@@ -4,10 +4,10 @@ USE ieee.std_logic_1164.ALL;
 entity RegisterFile is
 	port(
 	
-		readReg1 : in std_logic_vector(7 downto 0);
-		readReg2 : in std_logic_vector(7 downto 0);
+		readReg1 : in std_logic_vector(2 downto 0);
+		readReg2 : in std_logic_vector(2 downto 0);
 		
-		writeReg : in std_logic_vector(7 downto 0);
+		writeReg : in std_logic_vector(2 downto 0);
 		writeData : in std_logic_vector(7 downto 0);
 		RegWrite : in std_logic;
 		
@@ -47,22 +47,18 @@ architecture rtl of RegisterFile is
   component mux8x1_8bits is
 	 port(
 	
-		  x0 : in std_logic_vector(7 downto 0);
-      x1 : in std_logic_vector(7 downto 0);
-      x2 : in std_logic_vector(7 downto 0);
-      x3 : in std_logic_vector(7 downto 0);
-   
-  x4 : in std_logic_vector(7 downto 0);
-   
-  x5 : in std_logic_vector(7 downto 0);
-   
-  x6 : in std_logic_vector(7 downto 0);
- 
-    x7 : in std_logic_vector(7 downto 0);
+			x0 : in std_logic_vector(7 downto 0);
+			x1 : in std_logic_vector(7 downto 0);
+			x2 : in std_logic_vector(7 downto 0);
+			x3 : in std_logic_vector(7 downto 0);
+			x4 : in std_logic_vector(7 downto 0);
+			x5 : in std_logic_vector(7 downto 0);
+			x6 : in std_logic_vector(7 downto 0);
+			x7 : in std_logic_vector(7 downto 0);
+  
+			s : in std_logic_vector(2 downto 0);
     
-      s : in std_logic_vector(2 downto 0);
-    
-      o : out std_logic_vector(7 downto 0)
+			o : out std_logic_vector(7 downto 0)
     
 	 );
   end component mux8x1_8bits;
